@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Extraction Example</title>
+</head>
+<body>
+    <div id="content">
+        <h1>Hello, World!</h1>
+        <p>This is a simple example for data extraction.</p>
+        <ul>
+            <li id="item1">Item 1</li>
+            <li id="item2">Item 2</li>
+            <li id="item3">Item 3</li>
+        </ul>
+    </div>
+    <script>
+        // Wait for the DOM to be fully loaded
+document.addEventListener('DOMContentLoaded', function () {
+    // Extracting text from the h1 element
+    var title = document.querySelector('h1').textContent;
+    console.log('Title:', title);
+
+    // Extracting text from the paragraph
+    var paragraph = document.querySelector('p').textContent;
+    console.log('Paragraph:', paragraph);
+
+    // Extracting text from each list item
+    var items = document.querySelectorAll('li');
+    items.forEach(function (item, index) {
+        console.log('Item ' + (index + 1) + ':', item.textContent);
+    });
+});
+
+    </script>
+</body>
+</html>

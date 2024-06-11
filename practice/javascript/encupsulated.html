@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    // Constructor function for creating a person object
+function Person(name, age) {
+  // Private variables
+  var _name = name;
+  var _age = age;
+
+  // Public method to get the name
+  this.getName = function () {
+    return _name;
+  };
+
+  // Public method to get the age
+  this.getAge = function () {
+    return _age;
+  };
+
+  // Public method to set the age
+  this.setAge = function (newAge) {
+    if (newAge > 0) {
+      _age = newAge;
+    } else {
+      console.log("Age must be a positive number");
+    }
+  };
+}
+
+// Create a new person
+var person1 = new Person("John", 30);
+
+// Accessing public methods to retrieve and update private variables
+console.log(person1.getName()); // Output: John
+console.log(person1.getAge());  // Output: 30
+
+person1.setAge(35);
+console.log(person1.getAge());  // Output: 35
+
+// Trying to set an invalid age
+person1.setAge(-5); // Output: Age must be a positive number
+console.log(person1.getAge());  // Output: 35 (unchanged)
+
+// Attempting to access private variables directly will result in an undefined value
+console.log(person1._name); // Output: undefined
+console.log(person1._age);  // Output: undefined
+</script>
+</body>
+</html>

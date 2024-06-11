@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>encapsulated example 1</title>
+</head>
+<body>
+   <script>
+    function Person(name, age) {
+  // Private variables
+  let _name = name;
+  let _age = age;
+
+  // Public methods to access private variables
+  this.getName = function () {
+    return _name;
+  };
+
+  this.getAge = function () {
+    return _age;
+  };
+
+  this.setName = function (newName) {
+    _name = newName;
+  };
+
+  this.setAge = function (newAge) {
+    if (newAge > 0) {
+      _age = newAge;
+    } else {
+      console.error("Age must be a positive number.");
+    }
+  };
+}
+
+// Create an instance of Person
+let person1 = new Person("John", 30);
+
+// Access private variables through public methods
+console.log(person1.getName()); // Output: John
+console.log(person1.getAge()); // Output: 30
+
+// Modify private variables through public methods
+person1.setName("Jane");
+person1.setAge(25);
+
+console.log(person1.getName()); // Output: Jane
+console.log(person1.getAge()); // Output: 25
+
+   </script> 
+</body>
+</html>

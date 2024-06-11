@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="bootstrap-4.5.3-dist/css/bootstrap.min.css">
+    <script src="jquery/code.jquery.com_jquery-3.7.0.min.js"></script>
+    <link rel="stylesheet" href="bootstrap-4.5.3-dist/js/bootstrap.min.js">
+    <title>task</title>
+</head>
+<body>
+
+    <input class="form-control mt-5" type="number" id="input1" placeholder="Enter a number">
+    <input class="form-control mt-5" type="number" id="input2" placeholder="Enter another number">
+    <button onclick="addPositiveValues()">Add positive values</button>
+    <p id="result"></p>
+    <script>
+           function addPositiveValues(){
+        var input1=parseFloat(document.getElementById("input1").value);
+        var input2=parseFloat(document.getElementById("input2").value);
+        if(!isNaN(input1)&&!isNaN(input2)){
+        var result=Math.abs(input1)+Math.abs(input2);
+        document.getElementById("result").textContent="The sum of positive value is:"+result;
+        
+        }
+        else{
+            document.getElementById("result").textContent="please enter valid number in both fields:";
+        }
+        }
+      
+    </script>
+</body>
+</html>

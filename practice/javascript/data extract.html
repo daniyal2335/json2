@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Extraction Example</title>
+</head>
+<body>
+
+<ul id="itemList">
+    <li>Item 1</li>
+    <li>Item 2</li>
+    <li>Item 3</li>
+    <li>Item 4</li>
+</ul>
+
+<script>
+    // Get the <ul> element by its ID
+    var itemList = document.getElementById("itemList");
+
+    // Get all <li> elements within the <ul>
+    var items = itemList.getElementsByTagName("li");
+
+    // Extract and display the text content of each <li> element
+    for (var i = 0; i < items.length; i++) {
+        var itemText = items[i].textContent;
+        console.log("Item " + (i + 1) + ": " + itemText);
+    }
+</script>
+
+</body>
+</html>
